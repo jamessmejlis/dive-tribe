@@ -1,5 +1,5 @@
 import { Tabs } from 'expo-router'
-import { Home, Search, PlusCircle, Trophy, User } from 'lucide-react-native'
+import { Home, Search, PlusCircle, Users, User } from 'lucide-react-native'
 import { COLORS, SPACING } from '../../constants'
 import { ProtectedRoute } from '../../components/auth/ProtectedRoute'
 
@@ -41,10 +41,10 @@ export default function TabsLayout() {
         }}
       />
       <Tabs.Screen
-        name="challenges"
+        name="groups"
         options={{
-          title: 'Challenges',
-          tabBarIcon: ({ color, size }) => <Trophy color={color} size={size} />,
+          title: 'Groups',
+          tabBarIcon: ({ color, size }) => <Users color={color} size={size} />,
         }}
       />
       <Tabs.Screen

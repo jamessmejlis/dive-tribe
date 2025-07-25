@@ -9,10 +9,12 @@ import {
   Image,
   Center,
   ScrollView,
-  Spinner
+  Spinner,
+  Pressable
 } from '@gluestack-ui/themed'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import { router } from 'expo-router'
+import { Settings } from 'lucide-react-native'
 import { useAuthStore } from '../../stores/auth.store'
 import { useProfileStore } from '../../stores/profile.store'
 
@@ -37,6 +39,10 @@ export default function ProfileScreen() {
 
   const handleCompleteSetup = () => {
     router.push('/profile/setup/welcome')
+  }
+
+  const handleSettings = () => {
+    router.push('/settings')
   }
 
   if (loading) {
@@ -114,6 +120,21 @@ export default function ProfileScreen() {
     <SafeAreaView style={{ flex: 1 }}>
       <ScrollView bg="$surface50">
         <VStack space="lg" padding="$6">
+          {/* Settings Header */}
+          <HStack justifyContent="flex-end">
+            <Pressable onPress={handleSettings}>
+              <Box
+                width={44}
+                height={44}
+                borderRadius="$md"
+                bg="$surface100"
+                alignItems="center"
+                justifyContent="center"
+              >
+                <Settings size={20} color="#64748b" />
+              </Box>
+            </Pressable>
+          </HStack>
           {/* Profile Header */}
           <VStack space="lg" alignItems="center">
             <Center>
