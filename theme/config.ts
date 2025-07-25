@@ -1,5 +1,7 @@
 import { createConfig } from '@gluestack-ui/themed'
 
+// DiveTribe Ocean-Inspired Design System
+// Color palette based on diving depths and ocean tones
 export const config = createConfig({
   aliases: {
     bg: 'backgroundColor',
