@@ -1,0 +1,33 @@
+{
+  "expo": {
+    "name": "DiveTribe",
+    "slug": "divetribe",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "light",
+    "newArchEnabled": true,
+    "splash": {
+      "image": "./assets/splash-icon.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#0891b2"
+    },
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.divetribe.app"
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#0891b2"
+      },
+      "edgeToEdgeEnabled": true,
+      "package": "com.divetribe.app"
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    },
+    "scheme": "divetribe",
+    "plugins": ["expo-router"]
+  }
+}
