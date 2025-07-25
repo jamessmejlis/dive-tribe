@@ -1,20 +1,22 @@
 import { Tabs } from 'expo-router'
 import { Home, Search, PlusCircle, Trophy, User } from 'lucide-react-native'
 import { COLORS, SPACING } from '../../constants'
+import { ProtectedRoute } from '../../components/auth/ProtectedRoute'
 
 export default function TabsLayout() {
   return (
-    <Tabs
-      screenOptions={{
-        tabBarActiveTintColor: COLORS.DIVE_BLUE,
-        tabBarInactiveTintColor: COLORS.INACTIVE_TAB,
-        tabBarStyle: {
-          height: SPACING.TAB_BAR_HEIGHT,
-          paddingBottom: SPACING.TAB_BAR_PADDING_BOTTOM,
-          paddingTop: SPACING.TAB_BAR_PADDING_TOP,
-        },
-      }}
-    >
+    <ProtectedRoute>
+      <Tabs
+        screenOptions={{
+          tabBarActiveTintColor: COLORS.DIVE_BLUE,
+          tabBarInactiveTintColor: COLORS.INACTIVE_TAB,
+          tabBarStyle: {
+            height: SPACING.TAB_BAR_HEIGHT,
+            paddingBottom: SPACING.TAB_BAR_PADDING_BOTTOM,
+            paddingTop: SPACING.TAB_BAR_PADDING_TOP,
+          },
+        }}
+      >
       <Tabs.Screen
         name="index"
         options={{
@@ -52,6 +54,7 @@ export default function TabsLayout() {
           tabBarIcon: ({ color, size }) => <User color={color} size={size} />,
         }}
       />
-    </Tabs>
+      </Tabs>
+    </ProtectedRoute>
   )
 }
