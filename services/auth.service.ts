@@ -343,7 +343,7 @@ export class AuthService {
         }
       }
 
-      if (error.code === statusCodes.IN_PROGRESS) {
+      if (googleError.code === statusCodes.IN_PROGRESS) {
         return {
           user: null,
           session: null,
@@ -351,7 +351,7 @@ export class AuthService {
         }
       }
 
-      if (error.code === statusCodes.PLAY_SERVICES_NOT_AVAILABLE) {
+      if (googleError.code === statusCodes.PLAY_SERVICES_NOT_AVAILABLE) {
         return {
           user: null,
           session: null,

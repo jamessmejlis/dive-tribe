@@ -295,12 +295,13 @@ export default function RegisterScreen() {
             {/* Error Message */}
             {authError && (
               <Box 
-                bg="$safety500" 
+                bg="$safety50" 
                 p="$3" 
                 borderRadius="$md"
-                opacity={0.1}
+                borderWidth="$1"
+                borderColor="$safety200"
               >
-                <Text fontSize="$sm" color="$safety500" textAlign="center">
+                <Text fontSize="$sm" color="$safety700" textAlign="center">
                   {authError}
                 </Text>
               </Box>

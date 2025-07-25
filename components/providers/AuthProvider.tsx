@@ -1,5 +1,7 @@
 import React, { useEffect, ReactNode } from 'react'
+import { Box, Spinner } from '@gluestack-ui/themed'
 import { useAuthStore } from '../../stores/auth.store'
+import { COLORS } from '../../constants'
 
 interface AuthProviderProps {
   children: ReactNode
@@ -20,8 +22,11 @@ export function AuthProvider({ children }: AuthProviderProps) {
 
   // Show loading screen while auth is initializing
   if (!isInitialized) {
-    // Could show a splash screen component here
-    return null
+    return (
+      <Box flex={1} justifyContent="center" alignItems="center">
+        <Spinner color={COLORS.DIVE_BLUE} size="large" />
+      </Box>
+    )
   }
 
   return <>{children}</>

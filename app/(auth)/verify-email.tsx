@@ -45,21 +45,18 @@ export default function VerifyEmailScreen() {
 
   const handleCheckVerification = async () => {
     try {
-      // TODO: Implement check verification status service
       console.log('Checking verification status')
       
-      // Simulate verification check
-      const isVerified = Math.random() > 0.5 // Random for demo
+      // For production, this should refresh the user session to check email_confirmed_at
+      // For now, we'll simulate the check and navigate to tabs
+      setIsVerified(true)
       
-      if (isVerified) {
-        setIsVerified(true)
-        // Navigate to app after brief delay
-        setTimeout(() => {
-          router.replace('/(tabs)')
-        }, 2000)
-      }
-    } catch {
-      console.error('Failed to check verification status')
+      // Navigate to app after brief delay to show success state
+      setTimeout(() => {
+        router.replace('/(tabs)')
+      }, 2000)
+    } catch (error) {
+      console.error('Failed to check verification status:', error)
     }
   }
 
